@@ -1,0 +1,225 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --warning-color: #f39c12;
+  --danger-color: #e74c3c;
+  --background-color: #f4f6f9;
+  --card-background: #ffffff;
+  --text-primary: #2c3e50;
+  --text-secondary: #7f8c8d;
+  --border-color: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--background-color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 100%;
+}
+.dashboard-container1 {
+  width: 980px;
+}
+.product-image1 {
+  width: 400px;
+  margin-right: 20px;
+  border-radius: 5px;
+  object-fit: contain;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.product-info {
+  text-align: right;
+}
+
+.product-info h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+.star {
+  color: #f39c12;
+  font-size: 20px;
+  margin-right: 4px;
+}
+
+.rating-value {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.review-count {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.grid-item {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  padding: 15px;
+}
+
+.kpi-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  grid-column: span 2;
+}
+
+.kpi-card {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  background-color: var(--card-background);
+}
+
+.kpi-card h3 {
+  margin: 0 0 5px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.kpi-card p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.chart {
+  grid-column: span 1;
+}
+
+.insights-and-words {
+  display: flex;
+  gap: 15px;
+}
+
+.additional-insights {
+  flex: 1;
+}
+
+.grid-item-word-cloud {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  padding: 15px;
+  width: 370px;
+  margin-top: 20px;
+}
+
+.word-cloud-and-feedback {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.word-cloud {
+  margin-bottom: 15px;
+}
+
+.insight-card {
+  background-color: var(--background-color);
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.insight-card h4 {
+  margin: 0 0 5px;
+  color: var(--primary-color);
+  font-size: 16px;
+}
+
+.insight-card p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.feedback-section {
+  flex-grow: 1;
+}
+
+.feedback-tabs {
+  display: flex;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.feedback-tab {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+.feedback-content {
+  padding: 10px;
+  text-align: left;
+  color: #5a5f65;
+}
+.feedback-tab.positive {
+  background-color: var(--secondary-color);
+}
+.feedback-tab.concerns {
+  background-color: var(--danger-color);
+}
+.feedback-tab.suggestions {
+  background-color: var(--warning-color);
+}
+
+.feedback-tab.active {
+  opacity: 1;
+  border: unset;
+}
+
+.feedback-tab:not(.active) {
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kpi-cards,
+  .feedback-section {
+    grid-column: span 1;
+  }
+
+  .insights-and-words {
+    flex-direction: column;
+  }
+}

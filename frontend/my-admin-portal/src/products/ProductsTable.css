@@ -1,0 +1,227 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --background-color: #f4f6f9;
+  --card-background: #ffffff;
+  --text-primary: #2c3e50;
+  --text-secondary: #7f8c8d;
+  --border-color: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+.product-container {
+  margin: 0 auto;
+  padding: 26px;
+  background-color: var(--background-color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.product-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+  background-color: var(--card-background);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px var(--shadow-color);
+  overflow: hidden;
+}
+
+.product-tabs button {
+  padding: 16px 24px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.product-tabs button:hover {
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+.product-tabs button.active {
+  background-color: var(--primary-color);
+  color: var(--card-background);
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-background);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px var(--shadow-color);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%; /* Ensure all cards have the same height */
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px var(--shadow-color);
+}
+
+.product-card-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(52, 152, 219, 0.05);
+}
+
+.product-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 20px;
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.product-meta {
+  flex-grow: 1;
+}
+
+.product-name {
+  /* margin: 0 0 8px; */
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-date {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.rating-stars {
+  display: flex;
+}
+
+.star {
+  color: #e0e0e0;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.star.filled {
+  color: #f1c40f;
+}
+
+.product-review {
+  flex-grow: 1;
+  padding: 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  overflow-y: auto;
+  text-align: left;
+}
+
+.product-footer {
+  padding: 16px 20px;
+  background-color: rgba(52, 152, 219, 0.05);
+  border-top: 1px solid var(--border-color);
+  margin-top: auto; /* Push the footer to the bottom */
+}
+
+.asin {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.pagination button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--card-background);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.pagination button:hover {
+  background-color: #2980b9;
+}
+
+.pagination button:disabled {
+  background-color: var(--text-secondary);
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 15px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* Scrollbar Styles */
+.product-review::-webkit-scrollbar {
+  width: 8px;
+}
+
+.product-review::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.product-review::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.product-review::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-container {
+    padding: 16px;
+  }
+
+  .product-tabs {
+    flex-wrap: wrap;
+  }
+
+  .product-tabs button {
+    flex: 1 0 33.333%;
+  }
+
+  .product-list {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+}
